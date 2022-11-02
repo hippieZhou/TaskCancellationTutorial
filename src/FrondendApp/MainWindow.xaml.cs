@@ -18,20 +18,14 @@ namespace FrondendApp
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            Application.Current.Dispatcher.BeginInvoke(() =>
-            {
-                htmlTb.Text = _client.GetHtmlString();
-                _logger.LogInformation("Down");
-            });
+            htmlTb.Text = _client.GetHtmlString();
+            _logger.LogInformation("Down");
         }
 
-        private void ButtonBase_OnClickAsync(object sender, RoutedEventArgs e)
+        private async void ButtonBase_OnClickAsync(object sender, RoutedEventArgs e)
         {
-            Application.Current.Dispatcher.BeginInvoke(async () =>
-            {
-                htmlTb.Text = await _client.GetHtmlStringAsync();
-                _logger.LogInformation("Async Down");
-            });
+            htmlTb.Text = await _client.GetHtmlStringAsync();
+            _logger.LogInformation("Async Down");
         }
     }
 }
