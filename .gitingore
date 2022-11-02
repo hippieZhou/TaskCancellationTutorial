@@ -4,6 +4,7 @@ logs/
 /packages/
 node_modules/
 .idea/
+.vs/
 riderModule.iml
 /_ReSharper.Caches/
 .DS_Store
