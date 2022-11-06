@@ -27,7 +27,9 @@ namespace CancellationTutorial.WpfApp
                 })
                 .ConfigureServices((context, collection) =>
                 {
+                    collection.AddSingleton<MainWindow>();
                     collection.AddSingleton<MainWindowViewModel>();
+                    collection.AddHttpClient();
                 })
                 .Build();
             
@@ -37,6 +39,9 @@ namespace CancellationTutorial.WpfApp
         protected override async void OnStartup(StartupEventArgs e)
         {
             await host.StartAsync();
+
+            MainWindow = Ioc.Default.GetRequiredService<MainWindow>();
+            MainWindow.Show();
         }
 
         protected override async void OnExit(ExitEventArgs e)
