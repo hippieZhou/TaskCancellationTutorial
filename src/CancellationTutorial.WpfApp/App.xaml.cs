@@ -1,13 +1,11 @@
-﻿using System.IO;
-using System.Windows;
+﻿using System.Windows;
 using CommunityToolkit.Mvvm.DependencyInjection;
-using CoreLib;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace FrondendApp
+namespace CancellationTutorial.WpfApp
 {
     public partial class App : Application
     {
@@ -27,7 +25,10 @@ namespace FrondendApp
                     builder.AddConsole();
                     builder.AddDebug();
                 })
-                .ConfigureServices((context, collection) => { collection.AddHttpClient<MyHttpClient>(); })
+                .ConfigureServices((context, collection) =>
+                {
+                    collection.AddSingleton<MainWindowViewModel>();
+                })
                 .Build();
             
             Ioc.Default.ConfigureServices(host.Services);

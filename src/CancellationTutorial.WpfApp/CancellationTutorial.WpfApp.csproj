@@ -14,11 +14,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BackendApp\BackendApp.csproj" />
-      <ProjectReference Include="..\CoreLib\CoreLib.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Content Include="appsettings.Development.json">
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

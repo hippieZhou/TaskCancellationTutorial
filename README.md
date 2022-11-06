@@ -12,11 +12,20 @@
 
 ## 最佳实践
 
-- Avoid Async Void
-- Async All the Way
+
+- Once async always async
+- Async void is BAD
+- Prefer Task.FromResult over Task.Run
+- Avoid .Result and .Wait
+- Prefer await over ContinueWith
+- Always pass the CancellationToken
+- Prefer async Task over Task
+- Don't sync over async in constructors
 - Configure Context
   - Performance
   - Dead Lock
+  - UI -> ConfigureAwait(true)
+  - Library -> ConfigureAwait(false)
 
 
 ## 相关参考
@@ -26,3 +35,4 @@
 - [Difference Between Asynchronous Programming and Multithreading in C#](https://code-maze.com/csharp-async-vs-multithreading/)
 - [Asynchronous Programming with Async and Await in ASP.NET Core](https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/)
 - [一个简单的模拟实例说明Task及其调度问题](https://mp.weixin.qq.com/s/mXm7oysi1E4-EsOyDxgUPA)
+- [ASP.NET Core Diagnostic Scenarios](https://github.com/davidfowl/AspNetCoreDiagnosticScenarios)
