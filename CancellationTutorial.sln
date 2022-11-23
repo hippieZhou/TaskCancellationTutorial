@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CancellationTutorial.Consol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CancellationTutorial.WpfApp", "src\CancellationTutorial.WpfApp\CancellationTutorial.WpfApp.csproj", "{0EF88D54-AAD1-4310-9A34-ED84E340D5B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancellationTutorial.CoreLib", "src\CancellationTutorial.CoreLib\CancellationTutorial.CoreLib.csproj", "{EF44E810-0878-4DAE-A38E-64EF68E7D8C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{0EF88D54-AAD1-4310-9A34-ED84E340D5B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EF88D54-AAD1-4310-9A34-ED84E340D5B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EF88D54-AAD1-4310-9A34-ED84E340D5B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF44E810-0878-4DAE-A38E-64EF68E7D8C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF44E810-0878-4DAE-A38E-64EF68E7D8C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF44E810-0878-4DAE-A38E-64EF68E7D8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF44E810-0878-4DAE-A38E-64EF68E7D8C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +43,7 @@ Global
 		{C7D24A55-DFF5-4F2D-BDBF-BA91577882C7} = {F051310A-BE5A-443D-8908-216804F5F281}
 		{0A19D670-E31B-4800-9870-7757E1BF7F0A} = {F051310A-BE5A-443D-8908-216804F5F281}
 		{0EF88D54-AAD1-4310-9A34-ED84E340D5B9} = {F051310A-BE5A-443D-8908-216804F5F281}
+		{EF44E810-0878-4DAE-A38E-64EF68E7D8C5} = {F051310A-BE5A-443D-8908-216804F5F281}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE2E307C-480C-45EF-8271-7DBAFD71DB9F}

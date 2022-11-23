@@ -1,40 +1,23 @@
-﻿public class Program
+﻿namespace CancellationTutorial.ConsoleApp
 {
-    public static async Task Main(string[] args)
+    public class Program
     {
-        Console.WriteLine("Hello, World!");
-
-        var cancellationTokenSource = new CancellationTokenSource();
-        await ExampleWithLoop(cancellationTokenSource);
-    }
-
-    static async Task ExampleWithLoop(CancellationTokenSource cancellationTokenSource)
-    {
-        var _ = Task.Run(() =>
+        public static async Task Main(string[] args)
         {
-            Console.WriteLine($"Thread ID:{Environment.CurrentManagedThreadId}");
-            var key = Console.ReadKey();
-            if (key.Key == ConsoleKey.C)
+            Console.WriteLine($"Start:{DateTime.Now}");
+            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+            try
             {
-                cancellationTokenSource.Cancel();
-                Console.WriteLine($"Cancelled the task with :{key.Key}");
+                using var client = new HttpClient();
+                var response = await client.GetAsync("http://localhost:5041/weatherforecastwithCancel", cts.Token);
+                var json = response.Content.ReadAsStringAsync(cts.Token);
+                Console.WriteLine(json);
             }
-        });
-
-        try
-        {
-            while (true)
+            catch (Exception)
             {
-
-                Console.WriteLine($"{DateTime.Now} = {Environment.CurrentManagedThreadId}: Doing some work for 1 seconds");
-                await Task.Delay(1000, cancellationTokenSource.Token);
             }
+            Console.WriteLine($"Stop:{DateTime.Now}");
+            Console.ReadKey();
         }
-        catch (TaskCanceledException ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-        Console.WriteLine("Token was cancelled and we exited the loop");
-        cancellationTokenSource.Dispose();
     }
 }
