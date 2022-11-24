@@ -27,4 +27,8 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CancellationTutorial.CoreLib\CancellationTutorial.CoreLib.csproj" />
+    </ItemGroup>
+
 </Project>

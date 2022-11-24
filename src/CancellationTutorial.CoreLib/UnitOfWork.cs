@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using System;
 
 namespace CancellationTutorial.CoreLib
 {
@@ -48,7 +47,7 @@ namespace CancellationTutorial.CoreLib
 
             try
             {
-                for (int i = 1; i < 10; i++)
+                for (int i = 1; i <= 10; i++)
                 {
                     #region 01
                     //if (cancellationToken.IsCancellationRequested)
@@ -75,7 +74,7 @@ namespace CancellationTutorial.CoreLib
             {
                 _logger.LogError(ex, $"Throw An Exception:{ex.Message}");
             }
-            return await Task.FromResult(list);
+            return list;
         }
     }
 

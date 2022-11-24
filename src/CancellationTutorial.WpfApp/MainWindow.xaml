@@ -17,7 +17,7 @@
             <Behaviors:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </Behaviors:EventTrigger>
     </Behaviors:Interaction.Triggers>
-    <Grid>
+    <Grid Background="{Binding Brash}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>

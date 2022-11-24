@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace CancellationTutorial.WpfApp

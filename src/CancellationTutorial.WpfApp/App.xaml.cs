@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using CancellationTutorial.CoreLib;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,11 +26,12 @@ namespace CancellationTutorial.WpfApp
                     builder.AddConsole();
                     builder.AddDebug();
                 })
-                .ConfigureServices((context, collection) =>
+                .ConfigureServices((context, services) =>
                 {
-                    collection.AddSingleton<MainWindow>();
-                    collection.AddSingleton<MainWindowViewModel>();
-                    collection.AddHttpClient();
+                    services.AddSingleton<MainWindow>();
+                    services.AddSingleton<MainWindowViewModel>();
+                    services.AddTransient<IRepository, Repository>();
+                    services.AddHttpClient();
                 })
                 .Build();
             
